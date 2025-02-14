@@ -34,13 +34,13 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
       setStep(3)
     }}>
     <div className='text-center p-[16px_24px] border-x-2 border-t-0 border-b-2 border-[#07373F] rounded-3xl backdrop-blur-sm bg-[#0A0C11]/10'>
-        <p className='mb-2'>
+        <p className='mb-2 text-left'>
             Upload Profile Photo
         </p>
         <div className="flex flex-col items-center p-4">
             {/* Drag & Drop Area */}
             <div
-                className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center cursor-pointer"
+                className="border-4 border-[#24A0B5] bg-[#0E464F] rounded-lg p-10 text-center cursor-pointer"
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={handleDrop}
             >

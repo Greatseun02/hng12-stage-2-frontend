@@ -54,17 +54,19 @@ export default function Body() {
 
 
   return (
-    <div className= 'container mx-auto xl:max-w-[1200px] mt-5 p-6 bg-[#08252B] border-[#0E464F] border-[1px] rounded-3xl text-[#FAFAFA] roboto'>
+    <div className= 'container mx-auto xl:max-w-[700px] mt-5 p-6 bg-[#08252B] border-[#0E464F] border-[1px] rounded-3xl text-[#FAFAFA] roboto'>
         <div className='mb-5'>
-            <p className='jeju text-white text-2xl'>Ticket Selection</p>
-            <p className=''>Step {step}/3</p>
+            <div className='xl:flex items-center justify-between'>
+              <p className='jeju text-white text-2xl'>{step===1?"Ticket Selection":step===2?"Attendee Details":"Ready"}</p>
+              <p className=''>Step {step}/3</p>
+            </div>
             <div className='mt-2 bg-[#0E464F] h-1 rounded-sm grid grid-cols-3'>
                 <span className={"h-1 rounded-s-sm " + (step >= 1 ? "bg-[#24A0B5]" : "") }></span>
                 <span className={"h-1  " + ((step > 1) ? "bg-[#24A0B5]" : "") }></span>
                 <span className={"h-1 rounded-e-sm " + (step > 2 ? "bg-[#24A0B5]" : "") }></span>
             </div>
         </div>
-        <div>
+        <div className='xl:border-[1px] xl:border-[#0E464F] xl:p-[24px] xl:rounded-4xl'>
             {step === 1 && <Step1 ticket={ticket} setTicket={setTicket} ticketNo={ticketNo} setTicketNo={setTicketNo} setStep={setStep} />}
             {step === 2 && 
               <Step2 
