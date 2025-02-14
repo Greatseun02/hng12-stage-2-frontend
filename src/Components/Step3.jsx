@@ -11,13 +11,13 @@ export default function Step3({name, url, email, ticket, ticketNo, request, setR
             <div className="absolute z-0 h-full  ">
                 <img className="w-full object-cover" src={BG}></img>
             </div>
-            <div className="relative z-1 grid grid-rows-[auto_auto] gap-20 px-[20px] pt-[20px]">
+            <div className="relative z-1 grid grid-rows-[auto_auto] gap-6 px-[20px] pt-[20px]">
                 <div className="p-[14px] rounded-2xl bg-[#031E21]/10 border-[1px] border-[#24A0B5]">
                     <p>Techember Fest ”25</p>
                     <p>📍 04 Rumens road, Ikoyi, Lagos</p>
                     <p>📅 March 15, 2025 | 7:00 PM</p>
-                    <div className="w-[140px] h-[140px] mx-auto">
-                        <img src="w-full h-full object-cover"></img>
+                    <div className="w-[140px] h-[140px] mx-auto my-5">
+                        <img src={url} className="w-full h-full object-cover rounded-xl border-4 border-[#24A0B5]/50 "></img>
                     </div>
                     <div className="p-1 grid grid-cols-2 rounded-lg bg-[#08343C] border-[#133D44] border-[1px]">
                         <div className="p-1 gap-1 grid border-b-[1px] border-r-[1px] border-[#12464E]">

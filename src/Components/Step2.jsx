@@ -1,16 +1,7 @@
-import { useState, useEffect } from "react";
 import { Email } from "./Icons";
 
 export default function Step2({url, setUrl, name, setName, email, setEmail, request, setRequest, step, setStep}) {
-  const [image, setImage] = useState(null);
 
-  // Load stored image from localStorage on mount
-  useEffect(() => {
-    const savedImage = localStorage.getItem("uploadedImage");
-    if (savedImage) {
-      setImage(savedImage);
-    }
-  }, []);
 
   // Handle File Upload (Input or Drag & Drop)
   const handleFile = (file) => {
@@ -19,8 +10,7 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
     const reader = new FileReader();
     reader.onload = () => {
       const base64Image = reader.result;
-      setImage(base64Image);
-      localStorage.setItem("uploadedImage", base64Image); // Save to localStorage
+      setUrl(base64Image);
     };
     reader.readAsDataURL(file);
   };
@@ -54,8 +44,8 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={handleDrop}
             >
-                {image ? (
-                <img src={image} alt="Uploaded" className="w-40 h-40 object-cover" />
+                {url ? (
+                <img src={url} alt="Uploaded" className="w-40 h-40 object-cover" />
                 ) : (
                 <p className="text-gray-500">Drag & Drop or Click to Upload</p>
                 )}
@@ -65,7 +55,7 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
             <input type="file" accept="image/*" onChange={handleInputChange} className="mt-4" />
 
             {/* Clear Image */}
-            {image && (
+            {url && (
                 <button
                 className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
                 onClick={() => {
