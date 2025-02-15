@@ -71,7 +71,7 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
     <hr className='border-t-4 border-[#07373F] mt-10 mb-10 '></hr>
     <div className="grid gap-2">
         <label className="">Enter your name</label>
-        <input value={name} onChange={(event)=>{setName(event.target.value)}} className=" text-white border-[1px] border-[#07373F] rounded-xl h-12 p-3">
+        <input required value={name} onChange={(event)=>{setName(event.target.value)}} className=" text-white border-[1px] border-[#07373F] rounded-xl h-12 p-3">
 
         </input>
     </div>
@@ -90,7 +90,7 @@ export default function Step2({url, setUrl, name, setName, email, setEmail, requ
 
         </textarea>
     </div>
-    <div className='grid gap-3 mt-10'>
+    <div className='grid gap-3 xl:grid-cols-2 mt-10'>
         <button type="submit" className='cursor-pointer bg-[#24A0B5] text-white rounded-lg h-[48px] w-full flex justify-center items-center jeju'>Get My Free Ticket</button>
         <button onClick={()=>{setStep(1)}}
          className='cursor-pointer text-[#24A0B5] border-[#24A0B5] border-[1px] rounded-lg h-[48px] w-full flex justify-center items-center jeju'>Back</button>

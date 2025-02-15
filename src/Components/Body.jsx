@@ -23,8 +23,8 @@ export default function Body() {
 
   const [step, setStep] = useState(()=>{return (persistStep || 1) * 1})
   const [name, setName] = useState(()=> {return persistName || ""})
-  const [ticket, setTicket] = useState(()=>{return persistTicketType || "free"})
-  const [ticketNo, setTicketNo] = useState(()=>{return persistTicketNo || ""})
+  const [ticket, setTicket] = useState(()=>{return persistTicketType || "Free"})
+  const [ticketNo, setTicketNo] = useState(()=>{return persistTicketNo || "1"})
   const [email, setEmail] = useState(()=>{return persistEmail || "" })
   const [request, setRequest] = useState(()=>{return persistRequest || ""})
   const [url, setUrl] = useState(()=>{return persistUrl || ""})

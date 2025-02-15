@@ -15,23 +15,23 @@ export default function Step1({ticket, setTicket, ticketNo, setTicketNo, setStep
             <div>
                 <p className='mb-1'>Select Ticket Type:</p>
                 <div className='grid gap-3 bg-[#052228] border-[1px] border-[#07373F] rounded-3xl p-4 xl:grid-cols-3 '>
-                    <div onClick={()=>{
-                        setTicket("free")
-                    }} className={"cursor-pointer border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="free" ? " bg-[#12464E] !border-[1px]" : "")}  >
+                    <div tabIndex={0} onKeyDown={(event)=>{if(event.key==="Enter"){setTicket("Free")}}} onClick={()=>{
+                        setTicket("Free")
+                    }} className={"cursor-pointer focus:outline-1 outline-white border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="Free" ? " bg-[#12464E] !border-[1px]" : "")}  >
                         <p className='text-white text-2xl '>Free</p>
                         <p>Regular Access</p>
                         <p className='text-[#D9D9D9] text-sm'>20/52</p>
                     </div>
-                    <div onClick={()=>{
-                        setTicket("vip")
-                    }} className={"cursor-pointer border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="vip" ? " bg-[#12464E] !border-[1px]" : "")}  >
+                    <div tabIndex={0} onKeyDown={(event)=>{if(event.key==="Enter"){setTicket("VIP")}}} onClick={()=>{
+                        setTicket("VIP")
+                    }} className={"cursor-pointer focus:outline-1 outline-white border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="VIP" ? " bg-[#12464E] !border-[1px]" : "")}  >
                         <p className='text-white text-2xl '>$150</p>
                         <p >VIP ACCESS</p>
                         <p className='text-[#D9D9D9] text-sm'>20/52</p>
                     </div>
-                    <div onClick={()=>{
-                        setTicket("vvip")
-                    }} className={"cursor-pointer border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="vvip" ? " bg-[#12464E] !border-[1px]" : "")}  >
+                    <div tabIndex={0} onKeyDown={(event)=>{if(event.key==="Enter"){setTicket("VVIP")}}} onClick={()=>{
+                        setTicket("VVIP")
+                    }} className={"cursor-pointer focus:outline-1 outline-white border-[2px] rounded-xl border-[#197686] p-3 " + (ticket==="VVIP" ? " bg-[#12464E] !border-[1px]" : "")}  >
                         <p className='text-white text-2xl '>$150</p>
                         <p>VVIP ACCESS</p>
                         <p className='text-[#D9D9D9] text-sm'>20/52</p>
